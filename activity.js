@@ -1,10 +1,8 @@
 var count = 0, best = Infinity, sumOfTimes = 0, attempts = 0;
 var start, end;
 
-// set up table
 function buildTable() {
     let html = "<table style='border: 1px solid black'><tr>";
-    // button id
     let bID = 0;
     for (let i = 0; i < 4; i++) {
         let used = false;
@@ -15,7 +13,6 @@ function buildTable() {
                 html += "<td><button id='" + bID + "' onclick='tileClick(1, " + bID + ")' class='red-btn'/></td>"
                 break;
             }
-            // 30% chance of creating the red tile
             if (n < 3 && !used) {
                 html += "<td><button id='" + bID + "' onclick='tileClick(1, " + bID + ")' class='red-btn'/></td>"
                 used = true;
@@ -29,15 +26,11 @@ function buildTable() {
     document.getElementById("grid").innerHTML = html;
 }
 
-// handle button clicks
 function tileClick(x, y) {
-    // prevent user from repeatedly clicking the same button
     document.getElementById(y).disabled = true;
-    // make button invisible
     document.getElementById(y).setAttribute("style", "background-color: white; height: 150px; width: 150px");
-    console.log(x);
     let html = "";
-    // if the button clicked was red
+  
     if (x == 1) {
         count++;
         if (count == 4) {
@@ -72,8 +65,6 @@ function countdown() {
     }
     html += "</table>";
     document.getElementById("grid").innerHTML = html;
-
-    // placeholder because of 1 second delay
     document.getElementById("countdown").innerHTML = 3;
 
     // countdown function
