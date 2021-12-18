@@ -11,19 +11,24 @@
             tiles<br><br>For each blue tile clicked, a 50ms penalty is added onto your time
             <br><br>Your best, average and previous score is shown on the bottom of
             the screen.
-            <br><br>Click anywhere to close</div>
+            <br><br>Click anywhere to close
+        </div>
     </div>
-    <div align="center">
-        <button class="start" onclick="countdown()"><b>Start</b></button>
+    <div>
+        <button class="start" onclick="countdown()">Start</button>
         <button id="showInstructions" onclick="turnOnOverlay()">Show Instructions</button>
     </div>
-    <p align="center" id="countdown"></p>
+    <p id="countdown"></p>
 
-    <div align="center" id="grid"></div>
+    <div id="grid"></div>
     <br>
 
-    <p align="center" id="HighScore"></p>
+    <p id="HighScore"></p>
     <script src="activity.js"></script>
 </body>
+
+<footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</footer>
 
 </html>

@@ -28,7 +28,7 @@ function buildTable() {
 
 function tileClick(x, y) {
     document.getElementById(y).disabled = true;
-    document.getElementById(y).setAttribute("style", "background-color: white; height: 15vh; width: 15vh");
+    document.getElementById(y).setAttribute("style", "background-color: transparent; height: 15vh; width: 15vh");
     let html = "";
 
     if (x == 1) {
@@ -39,7 +39,7 @@ function tileClick(x, y) {
             let time = end - start + (50 * blueTilesClicked);
             sumOfTimes += time - 0.0005;
             best = Math.min(best, time - 0.0005);
-            html += "Your last attempt was " + ((time).toFixed(0)) + " ms; blue tiles clicked last attempt: " + blueTilesClicked + "<br><br>";
+            html += "Your last attempt was " + ((time).toFixed(0)) + " ms<br>Blue tiles clicked last attempt: " + blueTilesClicked + "<br><br>";
             html += "<b>Your best time so far is: " + best.toFixed(0) + " ms</b><br>";
             html += "<b>Your average time is: " + (sumOfTimes / attempts).toFixed(0) + " ms</b>";
             document.getElementById("HighScore").innerHTML = html;
@@ -84,9 +84,9 @@ function countdown() {
 }
 
 function turnOffOverlay() {
-    document.getElementById("overlay").style.display = "none";
+    $("#overlay").fadeOut(150)
 }
 
 function turnOnOverlay() {
-    document.getElementById("overlay").style.display = "block";
+    $("#overlay").fadeIn(150)
 }
